@@ -1,0 +1,126 @@
+{
+	"info": {
+		"_postman_id": "e315b798-d523-47ce-aaef-f541f3bd7dc2",
+		"name": "Medicos Mongo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12293707"
+	},
+	"item": [
+		{
+			"name": "Obtener Medicos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/medicos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"medicos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener medico por ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/medicos/67017561f972dd16b843e0e6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"medicos",
+						"67017561f972dd16b843e0e6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear Medico",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\": \"Carlos Perez\",\r\n    \"cedulaProfesional\": \"9876543\",\r\n    \"correo\": \"carlos.perez@gmail.com\",\r\n    \"especialidad\": \"Pediatría\",\r\n    \"telefono\": \"+57 312 678 9012\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/medicos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"medicos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Actualizar medico",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\": \"Alberto Lora Updated\",\r\n    \"cedulaProfesional\": \"1234567\",\r\n    \"correo\": \"alora.updated@gmail.com\",\r\n    \"especialidad\": \"Cardiología\",\r\n    \"telefono\": \"+57 311 999 9999\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/medicos/67017561f972dd16b843e0e6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"medicos",
+						"67017561f972dd16b843e0e6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar medico",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/medicos/6702eba8ae83c535895f71cd",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"medicos",
+						"6702eba8ae83c535895f71cd"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

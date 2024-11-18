@@ -1,0 +1,136 @@
+{
+	"info": {
+		"_postman_id": "0e7e4848-e89c-4ae6-90bf-258f3c010385",
+		"name": "Citas Mongo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12293707"
+	},
+	"item": [
+		{
+			"name": "Obtener Citas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/citas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"citas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear citas",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"fecha\": \"2024-11-17T10:30:00.000Z\",\r\n  \"idMedico\": \"67017561f972dd16b843e0e6\",\r\n  \"idPaciente\": \"6702ebe5ae83c535895f71d2\",\r\n  \"prioridad\": \"Normal\",\r\n  \"condicionesEspeciales\": [\"hipertensión\", \"diabetes\"]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/citas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"citas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Actualizar citas",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"fecha\": \"2024-11-20T10:30:00.000Z\",\r\n  \"idMedico\": \"67017561f972dd16b843e0e6\",\r\n  \"idPaciente\": \"6702ebe5ae83c535895f71d2\",\r\n  \"prioridad\": \"Alta\",\r\n  \"condicionesEspeciales\": [\r\n    \"hipertensión\",\r\n    \"diabetes\"\r\n  ]\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/citas/673a97b25594e16a20d5c983",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"citas",
+						"673a97b25594e16a20d5c983"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cambiar prioridad de pacientes con condiciones especiales",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n  \"hipertensión\",\r\n  \"diabetes\",\r\n  \"cáncer\"\r\n]\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/citas/prioridad/alta",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"citas",
+						"prioridad",
+						"alta"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar cita",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/citas/673a9a7ca53a013a8885e302\n",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"citas",
+						"673a9a7ca53a013a8885e302\n"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,198 @@
+{
+	"info": {
+		"_postman_id": "76399b3e-649a-46b7-9137-571d2b41afc1",
+		"name": "Pacientes Mongo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12293707"
+	},
+	"item": [
+		{
+			"name": "Obtener Pacientes",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/pacientes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"pacientes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear Paciente",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"nombre\": \"Perez Perez\",\r\n  \"edad\": 80,\r\n  \"telefono\": \"+57 311 456 7890\",\r\n  \"correo\": \"carlos.perez@mail.com\",\r\n  \"eps\": \"Coomeva\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/pacientes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"pacientes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Actualizar paciente",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"nombre\": \"Carlos Perez Updated\",\r\n  \"edad\": 31,\r\n  \"telefono\": \"+57 320 123 4567\",\r\n  \"correo\": \"carlos.perez.updated@mail.com\",\r\n  \"eps\": \"Coomeva\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/pacientes/673a945b2c468208e33a934a",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"pacientes",
+						"673a945b2c468208e33a934a"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar paciente",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/pacientes/673a94632c468208e33a934b",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"pacientes",
+						"673a94632c468208e33a934b"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener paciente por ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/pacientes/6702ebe5ae83c535895f71d2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"pacientes",
+						"6702ebe5ae83c535895f71d2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Consulta de pacientes en un rango de edad adscritos a una EPS",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/pacientes/porEdadYEps?startAge=20&endAge=80&eps=SaludTotal",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"pacientes",
+						"porEdadYEps"
+					],
+					"query": [
+						{
+							"key": "startAge",
+							"value": "20"
+						},
+						{
+							"key": "endAge",
+							"value": "80"
+						},
+						{
+							"key": "eps",
+							"value": "SaludTotal"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Consulta de pacientes mayores de 65 años en una EPS",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/pacientes/mayoresDe65PorEps?eps=Coomeva",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"pacientes",
+						"mayoresDe65PorEps"
+					],
+					"query": [
+						{
+							"key": "eps",
+							"value": "Coomeva"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
